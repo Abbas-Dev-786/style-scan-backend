@@ -30,7 +30,7 @@ module.exports.searchImage = catchAsync(async (req, res, next) => {
           {
             type: "image_url",
             image_url: {
-              url: "https://www.moderngentlemanmagazine.com/wp-content/uploads/2024/09/Layered-Hoodie-with-Overcoat-Street-Fashion-Winter-Ideas-for-men.jpeg",
+              url: req.base64Image,
             },
           },
         ],
@@ -60,3 +60,7 @@ module.exports.searchImage = catchAsync(async (req, res, next) => {
 
   res.status(200).json({ message: "success", data });
 });
+
+// module.exports.searchProduct = catchAsync(async (req, res, next) => {
+//   const { search_keywords } = req.body;
+// });
